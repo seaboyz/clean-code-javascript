@@ -728,6 +728,14 @@ class SuperArray extends Array {
   }
 }
 ```
+***note***
+```javascript
+const SuperArray = {}
+SuperArray.prototype.diff = function diff(comparisonArray) {
+  const hash = new Set(comparisonArray);
+  return this.filter(elem => !hash.has(elem))
+Object.setPrototypeOf(SuperArray, Array)
+```
 
 **[⬆ back to top](#table-of-contents)**
 
